@@ -51,8 +51,9 @@ public class GroupRecipeComponent extends RecipeComponent<Set<ItemStack>> {
             return false;
         } else {
             for (final ItemStack groupItem : component) {
-                if (groupItem instanceof final SlimefunItemStack sfStack) {
-                    return SlimefunItem.getById(sfStack.getItemId()).isItem(item);
+                final SlimefunItem sfGroup = SlimefunItem.getByItem(groupItem);
+                if (sfGroup != null) {
+                    return sfGroup.isItem(item);
                 } else {
                     return item.isSimilar(groupItem);
                 }

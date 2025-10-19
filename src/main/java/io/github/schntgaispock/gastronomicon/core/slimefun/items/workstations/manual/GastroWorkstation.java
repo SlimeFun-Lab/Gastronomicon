@@ -9,6 +9,7 @@ import java.util.Set;
 import javax.annotation.Nullable;
 import javax.annotation.ParametersAreNonnullByDefault;
 
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -180,9 +181,12 @@ public abstract class GastroWorkstation extends MenuBlock {
             // Calculate the crafting result
             final ItemStack output;
             final ItemStack[] toReturn;
-            if (recipeOutputs.length > 1 && recipeOutputs[0] instanceof final SlimefunItemStack sfItem) {
+
+            final SlimefunItem sf = SlimefunItem.getByItem(recipeOutputs[0]);
+
+            if (recipeOutputs.length > 1 && sf != null) {
                 final AddonConfig playerData = Gastronomicon.getInstance().getPlayerData();
-                final String proficiencyPath = player.getUniqueId() + ".proficiencies." + sfItem.getItemId();
+                final String proficiencyPath = player.getUniqueId() + ".proficiencies." + sf.getId();
                 final int proficiency = playerData.getInt(proficiencyPath, 0);
 
                 // Add 1 to proficiency

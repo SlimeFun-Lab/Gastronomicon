@@ -36,8 +36,8 @@ public abstract class GastroRecipe {
     @Getter
     @RequiredArgsConstructor
     public enum RecipeShape {
-        SHAPED(new CustomItemStack(Material.CRAFTING_TABLE, "&7This recipe is &fshaped")),
-        SHAPELESS(new CustomItemStack(Material.BARREL, "&7This recipe is &fshapeless"));
+        SHAPED(CustomItemStack.create(Material.CRAFTING_TABLE, "&7This recipe is &fshaped")),
+        SHAPELESS(CustomItemStack.create(Material.BARREL, "&7This recipe is &fshapeless"));
 
         private final ItemStack guideItem;
     }

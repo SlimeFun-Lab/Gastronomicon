@@ -51,18 +51,18 @@ public class MultiStove extends GastroWorkstation implements EnergyNetComponent 
         }
     }
 
-    public static final ItemStack TEMPERATURE_BUTTON_LOW = new CustomItemStack(
+    public static final ItemStack TEMPERATURE_BUTTON_LOW = CustomItemStack.create(
         Material.YELLOW_STAINED_GLASS_PANE,
         "&7Temperature: &eLOW",
         "",
         "&bLeft-click &7to increase");
-    public static final ItemStack TEMPERATURE_BUTTON_MEDIUM = new CustomItemStack(
+    public static final ItemStack TEMPERATURE_BUTTON_MEDIUM = CustomItemStack.create(
         Material.ORANGE_STAINED_GLASS_PANE,
         "&7Temperature: &6MEDIUM",
         "",
         "&bLeft-click &7to increase",
         "&bRight-click &7to decrease");
-    public static final ItemStack TEMPERATURE_BUTTON_HIGH = new CustomItemStack(
+    public static final ItemStack TEMPERATURE_BUTTON_HIGH = CustomItemStack.create(
         Material.RED_STAINED_GLASS_PANE,
         "&7Temperature: &cHIGH",
         "",

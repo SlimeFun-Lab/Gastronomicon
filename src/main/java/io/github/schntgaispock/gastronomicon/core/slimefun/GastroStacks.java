@@ -7,7 +7,6 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.bukkit.inventory.meta.PotionMeta;
-import org.bukkit.potion.PotionData;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.potion.PotionType;
 
@@ -38,169 +37,168 @@ public class GastroStacks {
     public static final ItemStack WATER_BOTTLE = new ItemStack(Material.POTION);
     static {
         final PotionMeta meta = (PotionMeta) WATER_BOTTLE.getItemMeta();
-        final PotionData data = new PotionData(PotionType.WATER);
-        meta.setBasePotionData(data);
+        meta.setBasePotionType(PotionType.WATER);
         WATER_BOTTLE.setItemMeta(meta);
     }
 
     // ---- Guide Only Items ----
 
-    public static final ItemStack GUIDE_ITEM_TOOLS = new CustomItemStack(
+    public static final ItemStack GUIDE_ITEM_TOOLS = CustomItemStack.create(
         Material.IRON_HOE,
         GastroTheme.TOOL.getColor() + "Tools");
 
-    public static final ItemStack GUIDE_ITEM_BASIC_MACHINES = new CustomItemStack(
+    public static final ItemStack GUIDE_ITEM_BASIC_MACHINES = CustomItemStack.create(
         Material.CRAFTING_TABLE,
         GastroTheme.MECHANICAL.getColor() + "Basic Machines");
 
-    public static final ItemStack GUIDE_ITEM_ELECTRIC_MACHINES = new CustomItemStack(
+    public static final ItemStack GUIDE_ITEM_ELECTRIC_MACHINES = CustomItemStack.create(
         Material.FURNACE,
         GastroTheme.ELECTRIC.getColor() + "Electric Machines");
 
-    public static final ItemStack GUIDE_ITEM_RAW_INGREDIENTS = new CustomItemStack(
+    public static final ItemStack GUIDE_ITEM_RAW_INGREDIENTS = CustomItemStack.create(
         Material.SUGAR,
         GastroTheme.INGREDIENT.getColor() + "Raw Ingredients");
 
-    public static final ItemStack GUIDE_ITEM_FOOD = new CustomItemStack(
+    public static final ItemStack GUIDE_ITEM_FOOD = CustomItemStack.create(
         Material.COOKED_BEEF,
         GastroTheme.REGULAR_FOOD.getColor() + "Food");
 
-    public static final ItemStack GUIDE_ITEM_MAIN = new CustomItemStack(
+    public static final ItemStack GUIDE_ITEM_MAIN = CustomItemStack.create(
         Material.COOKED_BEEF,
         GastroTheme.PERFECT_FOOD.getColor() + "Gastronomicon");
 
-    public static final ItemStack GUIDE_RECIPE_BREAK = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_BREAK = CustomItemStack.create(
         Material.IRON_PICKAXE,
         "&bBreaking Blocks",
         "&7This item is obtained by",
         "&7breaking the displayed",
         "&7blocks.");
 
-    public static final ItemStack GUIDE_RECIPE_HARVEST = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_HARVEST = CustomItemStack.create(
         Material.IRON_HOE,
         "&bHarvesting Crops",
         "&7This item is obtained by",
         "&7harvesting the displayed",
         "&7crops.");
 
-    public static final ItemStack GUIDE_RECIPE_KILL = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_KILL = CustomItemStack.create(
         Material.IRON_SWORD,
         "&bMob Drops",
         "&7This item is dropped by",
         "&7the displayed mobs.");
 
-    public static final ItemStack GUIDE_RECIPE_TRAP = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_TRAP = CustomItemStack.create(
         Material.COBWEB,
         "&bTrapping",
         "&7This item is obtained by",
         "&7catching it in the displayed",
         "&7trap.");
 
-    public static final ItemStack GUIDE_RECIPE_CULINARY_WORKBENCH = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_CULINARY_WORKBENCH = CustomItemStack.create(
         Material.CRAFTING_TABLE,
         "&bCulinary Workbench",
         "&7Craft this item as shown in a",
         "&7Culinary Workbench with the tool(s)",
         "&7listed below.");
 
-    public static final ItemStack GUIDE_RECIPE_MULTI_STOVE = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_MULTI_STOVE = CustomItemStack.create(
         Material.BLAST_FURNACE,
         "&bMulti-Stove",
         "&7Craft this item as shown in a",
         "&7Multi-Stove with the tool(s)",
         "&7listed below.");
 
-    public static final ItemStack GUIDE_RECIPE_REFRIGERATOR = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_REFRIGERATOR = CustomItemStack.create(
         Material.IRON_BLOCK,
         "&bRefrigerator",
         "&7Craft this item as shown in a",
         "&7Refrigerator with the tool(s)",
         "&7listed below.");
 
-    public static final ItemStack GUIDE_RECIPE_MILL = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_MILL = CustomItemStack.create(
         Material.CAULDRON,
         "&bMill",
         "&7Craft this item as shown in a",
         "&7Grain Mill with the tool(s)",
         "&7listed below.");
 
-    public static final ItemStack GUIDE_RECIPE_FERMENTER = new CustomItemStack(
+    public static final ItemStack GUIDE_RECIPE_FERMENTER = CustomItemStack.create(
         Material.BARREL,
         "&bFermenter",
         "&7Craft this item as shown in a",
         "&7Fermenter with the tool(s)",
         "&7listed below.");
 
-    public static final ItemStack GUIDE_TOOLS_REQUIRED = new CustomItemStack(
+    public static final ItemStack GUIDE_TOOLS_REQUIRED = CustomItemStack.create(
         Material.BLACK_STAINED_GLASS_PANE,
         ChatColor.of("#999999") + "Tools Required");
 
-    public static final ItemStack GUIDE_CONTAINER_REQUIRED = new CustomItemStack(
+    public static final ItemStack GUIDE_CONTAINER_REQUIRED = CustomItemStack.create(
         Material.PURPLE_STAINED_GLASS_PANE,
         "&5Container Required");
 
-    public static final ItemStack GUIDE_BIOME_REQUIRED = new CustomItemStack(
+    public static final ItemStack GUIDE_BIOME_REQUIRED = CustomItemStack.create(
         Material.LIME_STAINED_GLASS_PANE,
         "&aBiome Required");
 
-    public static final ItemStack GUIDE_CLIMATE_REQUIRED = new CustomItemStack(
+    public static final ItemStack GUIDE_CLIMATE_REQUIRED = CustomItemStack.create(
         Material.LIGHT_BLUE_STAINED_GLASS_PANE,
         "&bClimate Required");
 
-    public static final ItemStack GUIDE_NONE = new CustomItemStack(
+    public static final ItemStack GUIDE_NONE = CustomItemStack.create(
         Material.BARRIER,
         "&cNone");
 
-    public static final ItemStack GUIDE_KILL_GOAT = new CustomItemStack(
+    public static final ItemStack GUIDE_KILL_GOAT = CustomItemStack.create(
         Material.GOAT_SPAWN_EGG,
         "&fGoat");
 
-    public static final ItemStack GUIDE_KILL_SALMON = new CustomItemStack(
+    public static final ItemStack GUIDE_KILL_SALMON = CustomItemStack.create(
         Material.SALMON_SPAWN_EGG,
         "&fSalmon");
 
-    public static final ItemStack GUIDE_KILL_GUARDIAN = new CustomItemStack(
+    public static final ItemStack GUIDE_KILL_GUARDIAN = CustomItemStack.create(
         Material.GUARDIAN_SPAWN_EGG,
         "&fGuardian");
 
-    public static final ItemStack GUIDE_KILL_SQUID = new CustomItemStack(
+    public static final ItemStack GUIDE_KILL_SQUID = CustomItemStack.create(
         Material.SQUID_SPAWN_EGG,
         "&fSquid");
 
     // ---- Menu Only ----
 
-    public static final ItemStack MENU_BACKGROUND_ITEM = new CustomItemStack(Material.GRAY_STAINED_GLASS_PANE, "");
-    public static final ItemStack MENU_INGREDIENT_BORDER = new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_BACKGROUND_ITEM = CustomItemStack.create(Material.GRAY_STAINED_GLASS_PANE, "");
+    public static final ItemStack MENU_INGREDIENT_BORDER = CustomItemStack.create(Material.BLUE_STAINED_GLASS_PANE,
         "&9Ingredients");
-    public static final ItemStack MENU_CONTAINER_BORDER = new CustomItemStack(Material.PURPLE_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_CONTAINER_BORDER = CustomItemStack.create(Material.PURPLE_STAINED_GLASS_PANE,
         "&5Container");
-    public static final ItemStack MENU_TOOL_BORDER = new CustomItemStack(Material.BLACK_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_TOOL_BORDER = CustomItemStack.create(Material.BLACK_STAINED_GLASS_PANE,
         ChatColor.of("#999999") + "Tools");
-    public static final ItemStack MENU_OUTPUT_BORDER = new CustomItemStack(Material.ORANGE_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_OUTPUT_BORDER = CustomItemStack.create(Material.ORANGE_STAINED_GLASS_PANE,
         "&6Output");
-    public static final ItemStack MENU_CRAFT_BUTTON = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_CRAFT_BUTTON = CustomItemStack.create(Material.LIME_STAINED_GLASS_PANE,
         "&aClick to craft");
     public static final ItemStack MENU_PROGRESS_BAR = new ItemStack(Material.FLINT_AND_STEEL);
-    public static final ItemStack MENU_FOOD_BORDER = new CustomItemStack(Material.CYAN_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_FOOD_BORDER = CustomItemStack.create(Material.CYAN_STAINED_GLASS_PANE,
         "&fFood Slot", "", "&7Place food in the slot below");
-    public static final ItemStack MENU_TRAIN_BUTTON = new CustomItemStack(Material.LIME_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_TRAIN_BUTTON = CustomItemStack.create(Material.LIME_STAINED_GLASS_PANE,
         "&aClick to train");
-    public static final ItemStack MENU_INPUT_BORDER = new CustomItemStack(Material.BLUE_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_INPUT_BORDER = CustomItemStack.create(Material.BLUE_STAINED_GLASS_PANE,
         "&9Input");
-    public static final ItemStack MENU_ANDROID_BORDER = new CustomItemStack(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_ANDROID_BORDER = CustomItemStack.create(Material.LIGHT_BLUE_STAINED_GLASS_PANE,
         GastroTheme.ELECTRIC.getColor() + "Chef Android");
-    public static final ItemStack MENU_NOT_ENOUGH_ENERGY = new CustomItemStack(Material.RED_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_NOT_ENOUGH_ENERGY = CustomItemStack.create(Material.RED_STAINED_GLASS_PANE,
         "&cNot enough energy");
-    public static final ItemStack MENU_NO_ANDROID = new CustomItemStack(Material.RED_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_NO_ANDROID = CustomItemStack.create(Material.RED_STAINED_GLASS_PANE,
         "&cNo android detected");
-    public static final ItemStack MENU_INCORRECT_RECIPE = new CustomItemStack(Material.RED_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_INCORRECT_RECIPE = CustomItemStack.create(Material.RED_STAINED_GLASS_PANE,
         "&cIncorrect recipe");
-    public static final ItemStack MENU_NOT_WATERLOGGED = new CustomItemStack(Material.RED_STAINED_GLASS_PANE,
+    public static final ItemStack MENU_NOT_WATERLOGGED = CustomItemStack.create(Material.RED_STAINED_GLASS_PANE,
         "&cNot in water");
 
     // ---- Dummy ----
 
-    public static final ItemStack DUMMY_FISHING_NET = new CustomItemStack(Material.IRON_BARS,
+    public static final ItemStack DUMMY_FISHING_NET = CustomItemStack.create(Material.IRON_BARS,
         GastroTheme.ELECTRIC.getColor() + "Fishing Net");
 
     // ---- Tools ----
@@ -954,9 +952,9 @@ public class GastroStacks {
         "Peanut Butter");
     static {
         final PotionMeta meta = (PotionMeta) PEANUT_BUTTER.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.THICK));
+        meta.setBasePotionType(PotionType.THICK);
         meta.setColor(Color.fromRGB(0xbf7715));
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_POTION_EFFECTS);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         PEANUT_BUTTER.setItemMeta(meta);
     }
 
@@ -996,8 +994,8 @@ public class GastroStacks {
         "Ketchup");
     static {
         final PotionMeta meta = (PotionMeta) KETCHUP.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.RED);
         KETCHUP.setItemMeta(meta);
     }
@@ -1033,9 +1031,9 @@ public class GastroStacks {
         "Soy Sauce");
     static {
         final PotionMeta meta = (PotionMeta) SOY_SAUCE.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.MUNDANE));
+        meta.setBasePotionType(PotionType.MUNDANE);
         meta.setColor(Color.fromRGB(0x1d0a03));
-        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_POTION_EFFECTS);
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS, ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         SOY_SAUCE.setItemMeta(meta);
     }
 
@@ -1068,7 +1066,7 @@ public class GastroStacks {
         .texture(HeadTextures.SANDWICH_RED_OCHRE)
         .name("PB&J Sandwich")
         .hunger(8)
-        .effects(FoodEffect.chanceOf(FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 90), 0.5))
+        .effects(FoodEffect.chanceOf(FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 90), 0.5))
         .build();
 
     public static final FoodItemStack MARMALADE_SANDWICH = new FoodItemStackBuilder()
@@ -1076,7 +1074,7 @@ public class GastroStacks {
         .texture(HeadTextures.SANDWICH_ORANGE)
         .name("Marmalade Sandwich")
         .hunger(8)
-        .effects(FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 30))
+        .effects(FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 30))
         .build();
 
     public static final FoodItemStack BAKED_BEANS_AND_TOAST = new FoodItemStackBuilder()
@@ -1084,7 +1082,7 @@ public class GastroStacks {
         .texture(HeadTextures.TOAST_ORANGE)
         .name("Baked Beans and Toast")
         .hunger(8)
-        .effects(FoodEffect.chanceOf(FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 90), 0.5))
+        .effects(FoodEffect.chanceOf(FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 90), 0.5))
         .build();
 
     public static final FoodItemStack AVOCADO_TOAST = new FoodItemStackBuilder()
@@ -1092,7 +1090,7 @@ public class GastroStacks {
         .texture(HeadTextures.TOAST_GREEN)
         .name("Avocado Toast")
         .hunger(8)
-        .effects(FoodEffect.chanceOf(FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 90), 0.5))
+        .effects(FoodEffect.chanceOf(FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 90), 0.5))
         .build();
 
     public static final FoodItemStack TUNA_SANDWICH = new FoodItemStackBuilder()
@@ -1100,7 +1098,7 @@ public class GastroStacks {
         .texture(HeadTextures.SANDWICH_RED_GREEN)
         .name("Tuna Sandwich")
         .hunger(8)
-        .effects(FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 30))
+        .effects(FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 30))
         .build();
 
     public static final FoodItemStack BREAKFAST_SANDWICH = new FoodItemStackBuilder()
@@ -1237,7 +1235,7 @@ public class GastroStacks {
         .texture(HeadTextures.PASTA_GREEN)
         .name("Tuna Casserole")
         .hunger(14, 1)
-        .effects(FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 20, 1))
+        .effects(FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 20, 1))
         .build();
 
     public static final FoodItemStack CHICKEN_RAVIOLI = new FoodItemStackBuilder()
@@ -1335,7 +1333,7 @@ public class GastroStacks {
         .texture(HeadTextures.SOUP)
         .name("Split Pea Soup")
         .hunger(10, 1.75)
-        .effects(FoodEffect.removePotionEffect(PotionEffectType.CONFUSION))
+        .effects(FoodEffect.removePotionEffect(PotionEffectType.NAUSEA))
         .build();
 
     public static final FoodItemStack HAM_AND_SPLIT_PEA_SOUP = new FoodItemStackBuilder()
@@ -1343,7 +1341,7 @@ public class GastroStacks {
         .texture(HeadTextures.SOUP)
         .name("Ham and Split Pea Soup")
         .hunger(14, 1.75)
-        .effects(FoodEffect.removePotionEffect(PotionEffectType.CONFUSION))
+        .effects(FoodEffect.removePotionEffect(PotionEffectType.NAUSEA))
         .build();
 
     public static final FoodItemStack LENTIL_SOUP = new FoodItemStackBuilder()
@@ -1529,7 +1527,7 @@ public class GastroStacks {
         .texture(HeadTextures.STEW)
         .name("Butter Chicken")
         .hunger(7)
-        .effects(FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 30))
+        .effects(FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 30))
         .build();
 
     // Rice
@@ -1539,7 +1537,7 @@ public class GastroStacks {
         .texture(HeadTextures.STEW)
         .name("Butter Chicken with Naan Bread")
         .hunger(12)
-        .effects(FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 30, 1))
+        .effects(FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 30, 1))
         .build();
 
     public static final FoodItemStack SHRIMP_FRIED_RICE = new FoodItemStackBuilder()
@@ -1554,7 +1552,7 @@ public class GastroStacks {
         .texture(HeadTextures.RICE_BROWN)
         .name("Curry Rice")
         .hunger(10)
-        .effects(FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 30))
+        .effects(FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 30))
         .build();
 
     public static final FoodItemStack RICE_OMELETTE = new FoodItemStackBuilder()
@@ -2034,7 +2032,7 @@ public class GastroStacks {
         )
         .build();
     static {
-        ENCHANTED_GOLDEN_CARROT.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+        ENCHANTED_GOLDEN_CARROT.addUnsafeEnchantment(Enchantment.UNBREAKING, 1);
         ENCHANTED_GOLDEN_CARROT.addItemFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
@@ -2049,7 +2047,7 @@ public class GastroStacks {
             FoodEffect.positivePotionEffect(PotionEffectType.REGENERATION, 120))
         .build();
     static {
-        ENCHANTED_GLISTERING_MELON_SLICE.addUnsafeEnchantment(Enchantment.DURABILITY, 1);
+        ENCHANTED_GLISTERING_MELON_SLICE.addUnsafeEnchantment(Enchantment.UNBREAKING, 1);
         ENCHANTED_GLISTERING_MELON_SLICE.addItemFlags(ItemFlag.HIDE_ENCHANTS);
     }
 
@@ -2072,8 +2070,8 @@ public class GastroStacks {
         .build();
     static {
         final PotionMeta meta = (PotionMeta) BUBBLE_MILK_TEA.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.MAROON);
         BUBBLE_MILK_TEA.setItemMeta(meta);
     }
@@ -2086,8 +2084,8 @@ public class GastroStacks {
         .build();
     static {
         final PotionMeta meta = (PotionMeta) CANTALOUPE_BUBBLE_TEA.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.ORANGE);
         CANTALOUPE_BUBBLE_TEA.setItemMeta(meta);
     }
@@ -2100,8 +2098,8 @@ public class GastroStacks {
         .build();
     static {
         final PotionMeta meta = (PotionMeta) HONEYDEW_MELON_BUBBLE_TEA.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.GREEN);
         HONEYDEW_MELON_BUBBLE_TEA.setItemMeta(meta);
     }
@@ -2114,8 +2112,8 @@ public class GastroStacks {
         .build();
     static {
         final PotionMeta meta = (PotionMeta) APPLE_BUBBLE_TEA.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.LIME);
         APPLE_BUBBLE_TEA.setItemMeta(meta);
     }
@@ -2128,14 +2126,14 @@ public class GastroStacks {
         .name("Red Wine")
         .hunger(3, 0.5)
         .effects(
-            FoodEffect.negativePotionEffect(PotionEffectType.CONFUSION, 60, 2),
-            FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 45),
-            FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 45))
+            FoodEffect.negativePotionEffect(PotionEffectType.NAUSEA, 60, 2),
+            FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 45),
+            FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 45))
         .build();
     static {
         final PotionMeta meta = (PotionMeta) RED_WINE.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.MAROON);
         RED_WINE.setItemMeta(meta);
     }
@@ -2146,14 +2144,14 @@ public class GastroStacks {
         .name("Beer")
         .hunger(3, 0.5)
         .effects(
-            FoodEffect.negativePotionEffect(PotionEffectType.CONFUSION, 60, 2),
-            FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 45),
-            FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 45))
+            FoodEffect.negativePotionEffect(PotionEffectType.NAUSEA, 60, 2),
+            FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 45),
+            FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 45))
         .build();
     static {
         final PotionMeta meta = (PotionMeta) BEER.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.ORANGE);
         BEER.setItemMeta(meta);
     }
@@ -2164,14 +2162,14 @@ public class GastroStacks {
         .name("Apple Cider")
         .hunger(3, 0.5)
         .effects(
-            FoodEffect.negativePotionEffect(PotionEffectType.CONFUSION, 60, 2),
-            FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 45),
-            FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 45))
+            FoodEffect.negativePotionEffect(PotionEffectType.NAUSEA, 60, 2),
+            FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 45),
+            FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 45))
         .build();
     static {
         final PotionMeta meta = (PotionMeta) APPLE_CIDER.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.YELLOW);
         APPLE_CIDER.setItemMeta(meta);
     }
@@ -2182,14 +2180,14 @@ public class GastroStacks {
         .name("Rice Wine")
         .hunger(3, 0.5)
         .effects(
-            FoodEffect.negativePotionEffect(PotionEffectType.CONFUSION, 60, 2),
-            FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 45),
-            FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 45))
+            FoodEffect.negativePotionEffect(PotionEffectType.NAUSEA, 60, 2),
+            FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 45),
+            FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 45))
         .build();
     static {
         final PotionMeta meta = (PotionMeta) RICE_WINE.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.WHITE);
         RICE_WINE.setItemMeta(meta);
     }
@@ -2200,14 +2198,14 @@ public class GastroStacks {
         .name("Vodka")
         .hunger(3, 0.5)
         .effects(
-            FoodEffect.negativePotionEffect(PotionEffectType.CONFUSION, 120, 4),
-            FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 45),
-            FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 45))
+            FoodEffect.negativePotionEffect(PotionEffectType.NAUSEA, 120, 4),
+            FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 45),
+            FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 45))
         .build();
     static {
         final PotionMeta meta = (PotionMeta) VODKA.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.WHITE);
         VODKA.setItemMeta(meta);
     }
@@ -2218,14 +2216,14 @@ public class GastroStacks {
         .name("Rum")
         .hunger(3, 0.5)
         .effects(
-            FoodEffect.negativePotionEffect(PotionEffectType.CONFUSION, 120, 4),
-            FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 45),
-            FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 45))
+            FoodEffect.negativePotionEffect(PotionEffectType.NAUSEA, 120, 4),
+            FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 45),
+            FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 45))
         .build();
     static {
         final PotionMeta meta = (PotionMeta) RUM.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.RED);
         RUM.setItemMeta(meta);
     }
@@ -2236,14 +2234,14 @@ public class GastroStacks {
         .name("Whiskey")
         .hunger(3, 0.5)
         .effects(
-            FoodEffect.negativePotionEffect(PotionEffectType.CONFUSION, 120, 4),
-            FoodEffect.positivePotionEffect(PotionEffectType.INCREASE_DAMAGE, 45),
-            FoodEffect.positivePotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 45))
+            FoodEffect.negativePotionEffect(PotionEffectType.NAUSEA, 120, 4),
+            FoodEffect.positivePotionEffect(PotionEffectType.STRENGTH, 45),
+            FoodEffect.positivePotionEffect(PotionEffectType.RESISTANCE, 45))
         .build();
     static {
         final PotionMeta meta = (PotionMeta) WHISKEY.getItemMeta();
-        meta.setBasePotionData(new PotionData(PotionType.WATER));
-        meta.addItemFlags(ItemFlag.HIDE_POTION_EFFECTS);
+        meta.setBasePotionType(PotionType.WATER);
+        meta.addItemFlags(ItemFlag.HIDE_ADDITIONAL_TOOLTIP);
         meta.setColor(Color.ORANGE);
         WHISKEY.setItemMeta(meta);
     }

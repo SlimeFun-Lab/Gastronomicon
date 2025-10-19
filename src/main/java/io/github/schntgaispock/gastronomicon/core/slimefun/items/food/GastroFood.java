@@ -27,15 +27,18 @@ public class GastroFood extends SimpleGastroFood {
 
     private static final @Getter Set<String> gastroFoodIds = new HashSet<>();
 
-    private final @Getter FoodItemStack item;
     private final @Getter boolean perfect;
     private final ItemStack recipeDisplayOutput;
+    private final FoodItemStack foodItem;
 
-    public GastroFood(Research research, ItemGroup group, FoodItemStack item, GastroRecipe recipe,
-        ItemStack topRightDisplayItem, ItemStack recipeDisplayOutput, boolean perfect) {
+    public FoodItemStack getFoodItem() {
+        return foodItem;
+    }
+
+    public GastroFood(Research research, ItemGroup group, FoodItemStack item, GastroRecipe recipe, ItemStack topRightDisplayItem, ItemStack recipeDisplayOutput, boolean perfect) {
         super(research, group, item, recipe, topRightDisplayItem, recipeDisplayOutput, !perfect);
 
-        this.item = item;
+        this.foodItem = item;
         this.perfect = perfect;
         this.recipeDisplayOutput = recipeDisplayOutput;
     }
@@ -69,12 +72,13 @@ public class GastroFood extends SimpleGastroFood {
             }
 
             final Player p = e.getPlayer();
-            for (FoodEffect effect : food.getItem().getEffects()) {
+            final FoodItemStack fi = food.getFoodItem();
+
+            for (FoodEffect effect : fi.getEffects()) {
                 effect.apply(p, food.isPerfect());
             }
-            p.setFoodLevel(Math.min(p.getFoodLevel() + food.getItem().getHunger(), 20));
-            p.setSaturation((float) Math.min(p.getSaturation() + food.getItem().getSaturation(),
-                p.getFoodLevel()));
+            p.setFoodLevel(Math.min(p.getFoodLevel() + fi.getHunger(), 20));
+            p.setSaturation((float) Math.min(p.getSaturation() + fi.getSaturation(), p.getFoodLevel()));
             if (getGastroRecipe().getInputs().getContainer().getComponent() instanceof final ItemStack stack) {
                 p.getInventory().addItem(stack); // It should always be an itemstack anyways
             }
@@ -92,7 +96,7 @@ public class GastroFood extends SimpleGastroFood {
         super.register(addon);
         if (!isPerfect()) {
             getGastroFoodIds().add(getId());
-            new GastroFood(getResearch(), getItemGroup(), item.asPerfect(), getGastroRecipe(), topRightDisplayItem,
+            new GastroFood(getResearch(), getItemGroup(), foodItem.asPerfect(), getGastroRecipe(), topRightDisplayItem,
                 recipeDisplayOutput, true).hide()
                     .register(addon);
         }
