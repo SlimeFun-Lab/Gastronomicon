@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.github.schntgaispock.gastronomicon.util.Util;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
@@ -15,11 +16,12 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import io.github.schntgaispock.gastronomicon.Gastronomicon;
 import io.github.schntgaispock.gastronomicon.util.NumberUtil;
 import io.github.schntgaispock.gastronomicon.util.item.HeadTextures;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerHead;
-import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerSkin;
 import lombok.Getter;
 import lombok.ToString;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
+import org.bukkit.block.Skull;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.SkullMeta;
 
 @Getter
 @ToString
@@ -89,7 +91,16 @@ public final class TreeStructure {
                         case 1:
                             Block b = l.getWorld().getBlockAt(newX, newY, newZ);
                             b.setType(Material.PLAYER_HEAD);
-                            if (fruitTexture != null) PlayerHead.setSkin(b, PlayerSkin.fromBase64(fruitTexture), false);
+                            if (fruitTexture != null) {
+                                //PlayerHead.setSkin(b, PlayerSkin.fromBase64(fruitTexture), false);
+                                ItemStack head = Util.fromBase64Hash(fruitTexture);
+
+                                b.setType(Material.PLAYER_HEAD, false);
+                                Skull skull = (Skull) b.getState();
+                                SkullMeta meta = (SkullMeta) head.getItemMeta();
+                                skull.setOwnerProfile(meta.getOwnerProfile());
+                                skull.update(true, false);
+                            }
                             BlockStorage.store(b, getFruit());
                             break;
                         default:

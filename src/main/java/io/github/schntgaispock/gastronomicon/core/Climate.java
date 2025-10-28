@@ -22,19 +22,19 @@ public enum Climate {
     private final @Getter ItemStack displayItem;
 
     public static Climate of(Biome b) {
-        return switch (b) {
-            case BADLANDS, WOODED_BADLANDS, ERODED_BADLANDS, DESERT, 
-                SAVANNA, WINDSWEPT_SAVANNA, SAVANNA_PLATEAU -> Climate.DRY;
-            case DEEP_FROZEN_OCEAN, OLD_GROWTH_PINE_TAIGA, TAIGA, 
-                OLD_GROWTH_SPRUCE_TAIGA, WINDSWEPT_HILLS, WINDSWEPT_FOREST, 
-                WINDSWEPT_GRAVELLY_HILLS, STONY_SHORE -> Climate.COLD;
-            case SNOWY_BEACH, SNOWY_PLAINS, ICE_SPIKES, FROZEN_RIVER, 
-                FROZEN_OCEAN, GROVE, SNOWY_SLOPES, SNOWY_TAIGA, 
-                JAGGED_PEAKS, FROZEN_PEAKS -> Climate.SNOWY;
-            case NETHER_WASTES, CRIMSON_FOREST, WARPED_FOREST, 
-                SOUL_SAND_VALLEY, BASALT_DELTAS -> Climate.NETHER;
-            case THE_END, SMALL_END_ISLANDS, END_BARRENS, END_MIDLANDS, 
-                END_HIGHLANDS, THE_VOID -> Climate.END;
+        return switch (b.name()) {
+            case "BADLANDS","WOODED_BADLANDS","ERODED_BADLANDS","DESERT",
+                 "SAVANNA","WINDSWEPT_SAVANNA","SAVANNA_PLATEAU" -> Climate.DRY;
+            case "DEEP_FROZEN_OCEAN","OLD_GROWTH_PINE_TAIGA","TAIGA",
+                 "OLD_GROWTH_SPRUCE_TAIGA","WINDSWEPT_HILLS","WINDSWEPT_FOREST",
+                 "WINDSWEPT_GRAVELLY_HILLS","STONY_SHORE" -> Climate.COLD;
+            case "SNOWY_BEACH","SNOWY_PLAINS","ICE_SPIKES","FROZEN_RIVER",
+                 "FROZEN_OCEAN","GROVE","SNOWY_SLOPES","SNOWY_TAIGA",
+                 "JAGGED_PEAKS","FROZEN_PEAKS" -> Climate.SNOWY;
+            case "NETHER_WASTES","CRIMSON_FOREST","WARPED_FOREST",
+                 "SOUL_SAND_VALLEY","BASALT_DELTAS" -> Climate.NETHER;
+            case "THE_END","SMALL_END_ISLANDS","END_BARRENS","END_MIDLANDS",
+                 "END_HIGHLANDS","THE_VOID" -> Climate.END;
             default -> Climate.TEMPERATE;
         };
     }

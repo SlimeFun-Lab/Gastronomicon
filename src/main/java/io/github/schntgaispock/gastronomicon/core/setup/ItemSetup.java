@@ -323,12 +323,23 @@ public class ItemSetup {
                 return GastroStacks.CRAB.item().clone();
             }
 
+            private static final Set<Biome> WATER_BIOMES = Set.of(
+                    Biome.RIVER,
+                    Biome.BEACH,
+                    Biome.OCEAN,
+                    Biome.COLD_OCEAN,
+                    Biome.DEEP_OCEAN,
+                    Biome.WARM_OCEAN,
+                    Biome.FROZEN_OCEAN,
+                    Biome.LUKEWARM_OCEAN,
+                    Biome.DEEP_COLD_OCEAN,
+                    Biome.DEEP_FROZEN_OCEAN,
+                    Biome.DEEP_LUKEWARM_OCEAN
+            );
+
             @Override
             protected boolean canCatch(Location l) {
-                return switch (l.getBlock().getBiome()) {
-                    case RIVER, BEACH, OCEAN, COLD_OCEAN, DEEP_OCEAN, WARM_OCEAN, FROZEN_OCEAN, LUKEWARM_OCEAN, DEEP_COLD_OCEAN, DEEP_FROZEN_OCEAN, DEEP_LUKEWARM_OCEAN -> true;
-                    default -> false;
-                };
+                return WATER_BIOMES.contains(l.getBlock().getBiome());
             }
         }.register(gn);
 
